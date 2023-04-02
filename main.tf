@@ -15,9 +15,10 @@ provider "aws" {
 
 resource "aws_instance" "app_server" {
   ami           = "ami-0fcf52bcf5db7b003"
-  instance_type = "t2.micro"
+  instance_type = "t2.micro"  
   key_name = "oregon"
+ # user_data = "${file("init.sh")}"
   tags = {
-    Name = "Primeira Instancia"
+    Name = "Teste AWS"
   }
 }
