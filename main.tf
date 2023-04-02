@@ -19,6 +19,6 @@ resource "aws_instance" "app_server" {
   key_name = "oregon"
  # user_data = "${file("init.sh")}"
   tags = {
-    Name = "Teste AWS"
+    Name = "TERRAFORM ANSIBLE PYTHON"
   }
 }

@@ -1,3 +1,19 @@
 - hosts: terraform-ansible
-tasks:
-- nome
+  tasks:
+  - name: "Configure hostname"
+    ansible.builtin.hostname:
+      name: "new-hostname"
+    become: true
+  - name: Instalando o python3, virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+    become: yes
+  - name: Instalando dependencias com pip (Django e Django Rest)
+    pip:
+      virtualenv: /home/ubuntu/tcc/venv
+      name:
+        - django
+        - djangorestframework
